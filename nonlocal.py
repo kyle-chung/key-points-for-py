@@ -14,3 +14,17 @@ print(f())
 print(f())
 
 打印结果:3,6,9
+
+
+使用global 实现
+
+a =0
+def new_work():
+    global a
+    a=a+3
+    return a
+print(new_work())
+print(new_work())
+print(new_work())
+
+打印结果:3,6,9
