@@ -28,3 +28,8 @@ print(new_work())
 print(new_work())
 
 打印结果:3,6,9
+    
+by the way
+
+解决Python报错：local variable referenced before assignment
+报错原因是：python的函数中和全局同名的变量，如果你有 修改变量的值 就会变成局部变量，对该变量的引用自然就会出现没定义这样的错误了
