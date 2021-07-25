@@ -4,11 +4,11 @@ def work():
     x = 0
     def new_work():
         nonlocal x
-        x=x+3
+        x = x+3
         return x
     return new_work
          
-f=work()
+f = work()
 print(f())
 print(f())
 print(f())
@@ -18,10 +18,10 @@ print(f())
 
 使用global 实现
 
-a =0
+a = 0
 def new_work():
     global a
-    a=a+3
+    a = a+3
     return a
 print(new_work())
 print(new_work())
