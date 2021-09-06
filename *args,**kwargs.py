@@ -24,7 +24,6 @@ Optional argument:  4
 **kwargs允许你将不定长度的键值对，作为参数传递给一个函数
 下面这段代码演示了如何使用kwargs
 
-
 def test_kwargs(first, *args, **kwargs):
    print('Required argument: ', first)
    print(type(kwargs))
@@ -44,6 +43,7 @@ Optional argument (args):  2
 Optional argument (args):  3
 Optional argument (args):  4
 Optional argument k2 (kwargs): 6
+Optional argument k1 (kwargs): 5
 
 
 标准参数与*args、**kwargs在使用时的顺序
