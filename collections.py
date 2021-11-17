@@ -90,3 +90,60 @@ OrderedDict([('key1', 'value1'), ('key2', 'value2'), ('key3', 'value3')])
 >>> o['key1'] = 'value5'
 >>> o
 OrderedDict([('key1', 'value5'), ('key2', 'value2'), ('key3', 'value3')])
+
+
+
+namedtuple
+三种定义命名元组的方法：第一个参数是命名元组的构造器（如下的：Person，Human）
+
+>>> from collections import namedtuple
+>>> Person = namedtuple('Person', ['age', 'height', 'name'])
+>>> Human = namedtuple('Human', 'age, height, name')
+>>> Human2 = namedtuple('Human2', 'age height name')
+
+实例化命令元组
+
+>>> tom = Person(30,178,'Tom')
+>>> jack = Human(20,179,'Jack')
+>>> tom
+Person(age=30, height=178, name='Tom')
+>>> jack
+Human(age=20, height=179, name='Jack')
+>>> tom.age #直接通过  实例名+.+属性 来调用
+30
+>>> jack.name
+'Jack'
+
+
+
+ChainMap
+一个 ChainMap 将多个字典或者其他映射组合在一起，创建一个单独的可更新的视图。 如果没有 maps 被指定，就提供一个默认的空字典 
+ChainMap是管理嵌套上下文和覆盖的有用工具。
+
+>>> from collections import ChainMap
+>>> d1 = {'apple':1,'banana':2}
+>>> d2 = {'orange':2,'apple':3,'pike':1}
+>>> combined_d = ChainMap(d1,d2)
+>>> reverse_combind_d = ChainMap(d2,d1)
+>>> combined_d 
+ChainMap({'apple': 1, 'banana': 2}, {'orange': 2, 'apple': 3, 'pike': 1})
+>>> reverse_combind_d
+ChainMap({'orange': 2, 'apple': 3, 'pike': 1}, {'apple': 1, 'banana': 2})
+>>> for k,v in combined_d.items():
+...      print(k,v)
+... 
+pike 1
+apple 1
+banana 2
+orange 2
+>>> for k,v in reverse_combind_d.items():
+...      print(k,v)
+... 
+pike 1
+apple 3
+banana 2
+orange 2
+
+
+
+
