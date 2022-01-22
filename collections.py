@@ -10,6 +10,7 @@ ChainMap：类似字典的容器类，将多个映射集合到一个视图里面
 
 
 deque
+double-end queue
 collections.deque返回一个新的双向队列对象，从左到右初始化(用方法 append()) ，从 iterable （迭代对象) 数据创建
 如果 iterable 没有指定，新队列为空
 collections.deque队列支持线程安全，对于从两端添加(append)或者弹出(pop)，复杂度O(1)
